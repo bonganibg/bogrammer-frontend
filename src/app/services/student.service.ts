@@ -16,7 +16,7 @@ export class StudentService {
       method: 'POST',
       baseURL: environment.BASE_URL,
       url: this.STUDENT_REVIEW_REQUEST_ENDPOINT,
-      params:{
+      data:{
         "student_id": studentID,
         "task_id": taskId
       }
@@ -48,11 +48,14 @@ export class StudentService {
     let path = UtilService.getStudentDropboxPath(studentFile, folderLink);
 
     const formData = new FormData();
+    formData.append("testing", file)
+
+    console.log(formData)
 
     return axios({
       method: 'POST',
       baseURL: environment.BASE_URL,
-      url: 'student/tasl',
+      url: 'student/task',
       params: {
         "file_data": path
       },

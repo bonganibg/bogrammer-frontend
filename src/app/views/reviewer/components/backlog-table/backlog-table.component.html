@@ -54,7 +54,7 @@
 
             <!-- Set review -->
             <div class="w-4 mr-2 transform hover:text-green-300 hover:scale-110">
-              <label for="my-modal" class="cursor-pointer">
+              <label for="my-modal" class="cursor-pointer" (click)="setReviewModal(review.review_id)">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-check" viewBox="0 0 16 16">
                   <path d="M10.854 7.854a.5.5 0 0 0-.708-.708L7.5 9.793 6.354 8.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
                   <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
@@ -66,14 +66,15 @@
 
         <ng-template #accept>
           <td class="py-3 px-6 text-center">
-            <a class="text-blue-400 hover:text-green-300 cursor-pointer" for="my-modal">Start Time</a>
+            <a (click)="acceptReview(review.review_id)" class="text-blue-400 hover:text-green-300 cursor-pointer" for="my-modal">Start Time</a>
           </td>
         </ng-template>
       </tr>
     </tbody>
   </table>
 </section>
-<!--
+
+
 <input type="checkbox" id="my-modal" class="modal-toggle" />
 <div class="modal">
   <div class="modal-box">
@@ -87,19 +88,19 @@
     </div>
     <span class="text-lg flex flex-row gap-2">
       <p class="font-medium">Student Name: </p>
-      <p> {{modalReview.StudentName}} </p>
+      <p> {{modalReview.student_name}} </p>
     </span>
     <span class="text-lg flex flex-row gap-2">
       <p class="font-medium">Student Number: </p>
-      <p>{{modalReview.StudentNumber}}</p>
+      <p>{{modalReview.student_number}}</p>
     </span>
     <span class="text-lg flex flex-row gap-2">
       <p class="font-medium">Task: </p>
-      <p>{{modalReview.Task}}</p>
+      <p>{{modalReview.task}}</p>
     </span>
     <span class="text-lg flex flex-row gap-2 mb-5">
       <p class="font-medium">Course: </p>
-      <p>{{modalReview.Course}}</p>
+      <p>{{modalReview.course}}</p>
     </span>
 
     <div class="flex flex-row gap-2">
@@ -109,4 +110,4 @@
       </form>
     </div>
   </div>
-</div> -->
+</div>

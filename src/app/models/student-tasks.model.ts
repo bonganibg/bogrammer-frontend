@@ -8,5 +8,5 @@ export interface StudentTask
   review_score: number,
   review_status: boolean,
   content_download_link: string,
-  studnet_folder_upload_link: string
+  student_folder_upload_link: string
 }

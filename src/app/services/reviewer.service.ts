@@ -25,7 +25,7 @@ export class ReviewerService {
     return axios({
       method: 'PUT',
       baseURL: environment.BASE_URL,
-      url: this.REVIEW_ENDPOINT,
+      url: `reviewer/${review.review_id}`,
       data: review
     })
   }

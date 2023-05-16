@@ -12,6 +12,6 @@ export class UtilService {
   }
 
   public static getWorkDropboxPath(taskFolder: string){
-    return `/courses/${taskFolder}.zip`
+    return `/courses${taskFolder}.zip`
   }
 }
