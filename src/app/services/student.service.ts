@@ -48,9 +48,7 @@ export class StudentService {
     let path = UtilService.getStudentDropboxPath(studentFile, folderLink);
 
     const formData = new FormData();
-    formData.append("testing", file)
-
-    console.log(formData)
+    formData.append("file", file)
 
     return axios({
       method: 'POST',

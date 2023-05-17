@@ -1,27 +1,56 @@
-# BogrammarFrontend
+# Introduction
+This is a small demo application that simulates a more optimised flow of students uploading their tasks and reviewers receiving and reviewing the work.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.2.
+# System Overview
 
-## Development server
+## Summary 
+Bogrammar an angular application that communicates with the [Bogrammar API](https://github.com/bonganibg/bogrammar-api). The application allows the following actions:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Student 
+- Upload files to the students dropbox folder
+- Download tasks files from dropbox 
+- Request reviews for tasks
 
-## Code scaffolding
+### Reviewers
+- View review backlog
+- Download student work
+- Submit review score
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Implementation
 
-## Build
+### Requirements
+- Angular
+- Axios
+- Node
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Set up
+*Clone repository*
+``` shell
+git clone https://github.com/bonganibg/bogrammar-frontend.git
+```
 
-## Running unit tests
+*Change directory*
+``` shell
+cd bogrammar-frontend
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### Run Locally
+``` shell
+npm install 
+npm run start
+```
 
-## Running end-to-end tests
+#### Run with docker
+``` shell
+docker build -t bogrammar-frontend .
+docker run bogrammar-frontend
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Running Application
+| Endpoint | Description |
+| -- | -- |
+| `http://localhost:4200/reviewer` | Go to the reviewer dashboard where you can download content and submit reviews |
+| `http://localhost:4200/student` | Go to the student dashboard where you can upload, download and submit reviews |
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
